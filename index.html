@@ -276,7 +276,7 @@ const LABELS=["Deliveries","C-sections","GYN surgeries","Major abdominal","Offic
 const $=id=>document.getElementById(id);
 
 // ---- data: Google Sheet via Apps Script; works offline with an outbox on the phone ----
-const API_URL="PASTE_APPS_SCRIPT_URL";
+const API_URL="https://script.google.com/macros/s/AKfycbzzQ8-Wh0NKUQ5geuB4TgDrEciVuCtoHIBWd0JHRWon0Tr6ZqDMDH6kPqOq9VdPUQdn/exec";
 const STORE={get(k,d){try{const v=localStorage.getItem("cl."+k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem("cl."+k,JSON.stringify(v))}catch(e){}}};
 let pin=STORE.get("pin",""), server=STORE.get("cache",null), outbox=STORE.get("outbox",[]), ready=!!pin;
 let cfg={sites:["Pen Bay","Kingman"],currentSite:"Pen Bay"}, hist=null, cases=[], loaded={cases:!!server};
